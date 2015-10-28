@@ -1,0 +1,23 @@
+{
+  "name": "yst",
+  "authors": [
+    "Lynnette Ng <lynnette-ng@outlook.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.0.0",
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.0.0"
+  }
+}

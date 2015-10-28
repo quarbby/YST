@@ -1,0 +1,128 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+
+<dom-module id="concert-block">
+  <style is="custom-style">
+    .concert {
+      margin-left: 20%;
+      margin-bottom: 50px;
+      margin-top: 10px;
+      min-height: 50px;
+      background: #cdc9c9;
+      width: 70%;
+      font-size: 18px;
+      padding-top: 5px;
+    }
+    
+    .concert .concert-header a {
+      text-decoration: none;
+    }
+    
+    .concert .concert-header img.pic {
+      float: left;
+      margin-top: 3px;
+      margin-left: -58px;
+      width: 20px;
+      height: 20px;
+    }
+    
+    .concert .concert-header span.layer {
+      font-weight: bold;
+    }
+    
+    .concert .concert-body span.name {
+      font-weight: bold;
+      color: #b22222;
+    }
+    
+    .concert .concert-body span.content {
+        font-size: 13px;
+        float: center;
+    }
+    
+    .concert .concert-body span.people {
+        font-size: 13px;
+        color: #191970;
+        text-align: right;
+    }
+    
+    .concert .concert-body a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .concert .concert-footer {
+      font-size: 0.8em;
+      font-weight: bold;
+      display: table;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    .concert .concert-footer > div {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    
+    .right {
+      width: 24px;
+    }
+    
+    .concert .concert-timestamp {
+      font-weight: bold;
+      color: #666666;
+    }
+    
+    .pic {
+      float: left;
+      margin-top: 3px;
+      margin-left: -58px;
+      width: 100px;
+      height: 100px;
+    }
+    
+  </style>
+
+  <template>
+    <div class="concert">
+      <div class="concert-header">
+        <div class="pic">
+          <img src="{{concert.img}}" width="100px" height="100px">
+        </div>
+      </div>
+      <div class="concert-body" id="concert-name">
+        <span class="name">{{concert.type}}</span>
+       </div>
+      <div class="concert-body" id="concert-body">
+          <span class="content">{{concert.content}}</span><br>
+          <span class="people">{{concert.people}}</span>
+          <div class="concert-type-img"><img src="{{concert.typeimg}}"></div>
+      </div>
+      <div class="concert-footer">
+        <div class="left">
+          <div class="concert-timestamp">
+            <span>{{concert.timedate}}</span><span>{{concert.venue}}</span>
+          </div>
+        </div>
+        <div class="right">
+          <paper-icon-button icon="open-in-new" id="concert-hyperlink" on-click="openLink"></paper-icon-button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+      Polymer({
+        is: 'concert-block',
+        properties: {
+          concert: Object
+        },
+        openLink: function() {
+            var win = window.open(this.concert.link, '_blank');
+            win.focus();
+      }
+      });
+  </script>
+
+</dom-module>
